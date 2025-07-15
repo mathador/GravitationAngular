@@ -29,8 +29,8 @@ export class DrawingAreaComponent {
     const newCircle: Circle = {
       cx: event.clientX - svgRect.left,
       cy: event.clientY - svgRect.top,
-      r: this.circleRadius,
-      color: this.circleColor
+      r: this.circleRadius, // Utilise le rayon du formulaire
+      color: this.circleColor // Utilise la couleur du formulaire
     };
     this.circles.push(newCircle);
   }

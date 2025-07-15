@@ -7,6 +7,10 @@
     </svg>
 
     <!-- Formulaire -->
-    <app-circle-form (addCircle)="addCircleFromForm($event)"></app-circle-form>
+    <app-circle-form 
+      (addCircle)="addCircleFromForm($event)" 
+      (updateColor)="circleColor = $event" 
+      (updateRadius)="circleRadius = $event">
+    </app-circle-form>
   </div>
 </div>
