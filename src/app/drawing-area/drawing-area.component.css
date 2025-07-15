@@ -16,9 +16,11 @@ button {
 .content {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
 }
 
 svg {
+  flex: 1; /* Prend tout l'espace disponible */
   border: 2px solid #333;
   background-color: #f9f9f9;
   cursor: crosshair;
@@ -26,6 +28,7 @@ svg {
 
 .form {
   margin-left: 20px;
+  width: 200px; /* Largeur fixe pour le formulaire */
   text-align: left;
 }
 
