@@ -2,11 +2,11 @@
   <h2>Ajouter un cercle</h2>
   <label>
     Couleur :
-    <input type="color" [(ngModel)]="circleColor" (change)="onColorChange()" />
+    <input type="color" [(ngModel)]="circleColor" (change)="onColorChange($event)" />
   </label>
   <label>
     Rayon :
-    <input type="number" [(ngModel)]="circleRadius" min="10" max="50" (change)="onRadiusChange()" />
+    <input type="number" [(ngModel)]="circleRadius" min="10" max="50" (change)="onRadiusChange($event)" />
   </label>
   <button (click)="onAddCircle()">Ajouter</button>
 </div>

@@ -22,7 +22,7 @@ export class CircleFormComponent {
 
   onColorChange(event: Event): void {
     const input = event.target as HTMLInputElement;
-    this.updateColor.emit(input.value); // Émet une chaîne de caractères (string)
+    this.updateColor.emit(input.value); // Émet la couleur sélectionnée
   }
 
   onRadiusChange(event: Event): void {
