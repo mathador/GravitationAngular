@@ -3,8 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { CircleFormComponent } from './circle-form.component';
 
 @NgModule({
-  declarations: [CircleFormComponent],
-  imports: [FormsModule],
+  declarations: [],
+  imports: [FormsModule, CircleFormComponent],
   exports: [CircleFormComponent]
 })
-export class CircleFormModule {}
+export class CircleFormModule { }
