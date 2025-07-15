@@ -50,12 +50,20 @@ export class DrawingAreaComponent {
       return null; // Aucun cercle, pas de barycentre
     }
 
-    const totalX = this.circles.reduce((sum, circle) => sum + circle.cx, 0);
-    const totalY = this.circles.reduce((sum, circle) => sum + circle.cy, 0);
+    let totalMass = 0;
+    let weightedX = 0;
+    let weightedY = 0;
+
+    for (const circle of this.circles) {
+      const mass = circle.r; // Utilise le rayon comme masse
+      totalMass += mass;
+      weightedX += circle.cx * mass;
+      weightedY += circle.cy * mass;
+    }
 
     return {
-      x: totalX / this.circles.length,
-      y: totalY / this.circles.length
+      x: weightedX / totalMass,
+      y: weightedY / totalMass
     };
   }
 }
