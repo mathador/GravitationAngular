@@ -44,5 +44,19 @@ export class DrawingAreaComponent {
     };
     this.circles.push(newCircle);
   }
+
+  getBarycenter(): { x: number; y: number } | null {
+    if (this.circles.length === 0) {
+      return null; // Aucun cercle, pas de barycentre
+    }
+
+    const totalX = this.circles.reduce((sum, circle) => sum + circle.cx, 0);
+    const totalY = this.circles.reduce((sum, circle) => sum + circle.cy, 0);
+
+    return {
+      x: totalX / this.circles.length,
+      y: totalY / this.circles.length
+    };
+  }
 }
 

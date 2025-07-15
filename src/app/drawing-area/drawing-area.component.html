@@ -3,7 +3,24 @@
   <div class="content">
     <!-- Zone de dessin -->
     <svg #svgCanvas width="800" height="600" (click)="addCircleOnClick($event)">
+      <!-- Cercles -->
       <circle *ngFor="let circle of circles" [attr.cx]="circle.cx" [attr.cy]="circle.cy" [attr.r]="circle.r" [attr.fill]="circle.color" />
+
+      <!-- Barycentre -->
+      <ng-container *ngIf="getBarycenter() as barycenter">
+        <line 
+          [attr.x1]="barycenter.x - 5" 
+          [attr.y1]="barycenter.y" 
+          [attr.x2]="barycenter.x + 5" 
+          [attr.y2]="barycenter.y" 
+          stroke="red" stroke-width="2" />
+        <line 
+          [attr.x1]="barycenter.x" 
+          [attr.y1]="barycenter.y - 5" 
+          [attr.x2]="barycenter.x" 
+          [attr.y2]="barycenter.y + 5" 
+          stroke="red" stroke-width="2" />
+      </ng-container>
     </svg>
 
     <!-- Formulaire -->
