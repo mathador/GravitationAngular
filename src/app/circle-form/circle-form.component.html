@@ -1,0 +1,12 @@
+<div class="form">
+  <h2>Ajouter un cercle</h2>
+  <label>
+    Couleur :
+    <input type="color" [(ngModel)]="circleColor" />
+  </label>
+  <label>
+    Rayon :
+    <input type="number" [(ngModel)]="circleRadius" min="10" max="50" />
+  </label>
+  <button (click)="onAddCircle()">Ajouter</button>
+</div>

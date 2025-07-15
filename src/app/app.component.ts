@@ -1,18 +1,13 @@
 import { Component } from '@angular/core';
 import { DrawingAreaComponent } from './drawing-area/drawing-area.component';
+import { DrawingZoneComponent } from './drawing-zone/drawing-zone.component';
+import { CircleFormComponent } from './circle-form/circle-form.component'; // Import direct du composant autonome
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  // On ajoute notre nouveau composant dans les imports
-  imports: [DrawingAreaComponent],
+  imports: [DrawingAreaComponent, DrawingZoneComponent, CircleFormComponent], // Import direct
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css']
 })
-
-export class AppComponent {
-  title(title: any) {
-    throw new Error('Method not implemented.');
-  }
-  // You can add component logic here if needed
-}
+export class AppComponent {}

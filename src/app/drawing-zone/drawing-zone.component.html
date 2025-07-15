@@ -1,0 +1,3 @@
+<svg #svgCanvas width="800" height="600" (click)="addCircleOnClick($event)">
+  <circle *ngFor="let circle of circles" [attr.cx]="circle.cx" [attr.cy]="circle.cy" [attr.r]="circle.r" [attr.fill]="circle.color" />
+</svg>

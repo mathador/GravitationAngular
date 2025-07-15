@@ -1,30 +1,12 @@
 <div class="container">
   <h1>Zone de dessin interactive</h1>
-  <div class="controls">
-    <button (click)="addRandomCircle()">Ajouter un cercle aléatoire</button>
-  </div>
-
   <div class="content">
     <!-- Zone de dessin -->
-    <svg #svgCanvas 
-         width="800" 
-         height="600" 
-         (click)="addCircleOnClick($event)">
+    <svg #svgCanvas width="800" height="600" (click)="addCircleOnClick($event)">
       <circle *ngFor="let circle of circles" [attr.cx]="circle.cx" [attr.cy]="circle.cy" [attr.r]="circle.r" [attr.fill]="circle.color" />
     </svg>
 
     <!-- Formulaire -->
-    <div class="form">
-      <h2>Ajouter un cercle</h2>
-      <label>
-        Couleur :
-        <input type="color" [(ngModel)]="circleColor" />
-      </label>
-      <label>
-        Rayon :
-        <input type="number" [(ngModel)]="circleRadius" min="10" max="50" />
-      </label>
-      <button (click)="addCircleFromForm()">Ajouter</button>
-    </div>
+    <app-circle-form (addCircle)="addCircleFromForm($event)"></app-circle-form>
   </div>
 </div>
