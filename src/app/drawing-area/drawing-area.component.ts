@@ -23,7 +23,7 @@ export class DrawingAreaComponent {
   public circles: Circle[] = [];
   public circleColor: string = '#000000'; // Couleur par défaut
   public circleRadius: number = 20; // Rayon par défaut
-  public barycenterColor: string = '#FF0000'; // Couleur par défaut du barycentre
+  public barycenterColor: string = '#7a7777ff'; // Couleur par défaut du barycentre
 
   addCircleOnClick(event: MouseEvent): void {
     const svgRect = this.svgCanvas.nativeElement.getBoundingClientRect();
