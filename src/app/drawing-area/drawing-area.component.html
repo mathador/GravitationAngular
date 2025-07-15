@@ -13,13 +13,13 @@
           [attr.y1]="barycenter.y" 
           [attr.x2]="barycenter.x + 5" 
           [attr.y2]="barycenter.y" 
-          stroke="red" stroke-width="2" />
+          [attr.stroke]="barycenterColor" stroke-width="2" />
         <line 
           [attr.x1]="barycenter.x" 
           [attr.y1]="barycenter.y - 5" 
           [attr.x2]="barycenter.x" 
           [attr.y2]="barycenter.y + 5" 
-          stroke="red" stroke-width="2" />
+          [attr.stroke]="barycenterColor" stroke-width="2" />
       </ng-container>
     </svg>
 
@@ -27,7 +27,8 @@
     <app-circle-form 
       (addCircle)="addCircleFromForm($event)" 
       (updateColor)="circleColor = $event" 
-      (updateRadius)="circleRadius = $event">
+      (updateRadius)="circleRadius = $event"
+      (updateBarycenterColor)="barycenterColor = $event">
     </app-circle-form>
   </div>
 </div>

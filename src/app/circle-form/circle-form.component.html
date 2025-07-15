@@ -1,11 +1,15 @@
 <div class="form">
+  <label>
+    Couleur du barycentre :
+    <input type="color" [(ngModel)]="barycenterColor" (change)="onBarycenterColorChange($event)" />
+  </label>
   <h2>Ajouter un cercle</h2>
   <label>
-    Couleur :
+    Couleur du cercle :
     <input type="color" [(ngModel)]="circleColor" (change)="onColorChange($event)" />
   </label>
   <label>
-    Rayon :
+    Rayon du cercle :
     <input type="number" [(ngModel)]="circleRadius" min="10" max="50" (change)="onRadiusChange($event)" />
   </label>
   <button (click)="onAddCircle()">Ajouter</button>
