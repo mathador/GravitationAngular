@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Zone de dessin interactive</h1>
+  <div class="controls">
+    <button (click)="addRandomCircle()">Ajouter un cercle aléatoire</button>
+  </div>
+
+  <!-- 
+    La zone de dessin est un élément SVG (Scalable Vector Graphics).
+    - #svgCanvas est une référence de template qu'on récupère dans le .ts.
+    - (click)="addCircleOnClick($event)" écoute les clics sur le SVG.
+  -->
+  <svg #svgCanvas 
+       width="800" 
+       height="600" 
+       (click)="addCircleOnClick($event)">
+    <!-- On parcourt le tableau 'circles' et on crée un élément <circle> pour chaque objet -->
+    <circle *ngFor="let circle of circles" [attr.cx]="circle.cx" [attr.cy]="circle.cy" [attr.r]="circle.r" [attr.fill]="circle.color" />
+  </svg>
+</div>
